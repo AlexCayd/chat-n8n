@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n8n - Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Wiki-bot</h1>
+    
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            initialMessages: [
+                'Hola! 👋',
+                'Mi nombre es Ana. ¿Cómo puedo ayudarte hoy?'
+            ],
+            i18n: {
+                en: {
+                    title: 'Hola! 👋',
+                    subtitle: "Empieza un chat. Estamos aquí para ayudarte.",
+                    footer: '',
+                    getStarted: 'Nueva Conversación',
+                    inputPlaceholder: 'Escribe tu pregunta..',
+                },
+            },
+            webhookUrl: 'http://localhost:5678/webhook/8199a0b9-c83a-48b9-a621-2a66bcd583bf/chat'
+        });
+    </script>
+</body>
+</html>
